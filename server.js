@@ -25,7 +25,10 @@ io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     socket.join(roomId);
     socket.to(roomId).broadcast.emit("user-connected", userId);
+    socket.on("message", (message) => {
+      io.to(roomId).emit("createMessage", message);
+    });
   });
 });
 
-server.listen(3030, () => console.log("Server started on port 3030"));
+server.listen(8080, () => console.log("Server started on port 8080"));
