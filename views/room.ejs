@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zoom Clone</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
     <script
@@ -31,11 +29,17 @@
 
         <div class="main__controls">
           <div class="main__controls__block">
-            <div onclick="muteUnmute()" class="main__controls__button main__mute__button">
+            <div
+              onclick="muteUnmute()"
+              class="main__controls__button main__mute__button"
+            >
               <i class="fas fa-microphone"></i>
               <span>Mute</span>
             </div>
-            <div onclick="playStop()" class="main__controls__button main__video__button">
+            <div
+              onclick="playStop()"
+              class="main__controls__button main__video__button"
+            >
               <i class="fas fa-video"></i>
               <span>Stop Video</span>
             </div>
@@ -66,7 +70,7 @@
 
       <div class="main__right">
         <div class="main__header">
-          <h6>Chat</h6>
+          <h5>Chat</h5>
         </div>
         <div class="main__chat__window">
           <ul class="messages"></ul>

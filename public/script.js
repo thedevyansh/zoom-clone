@@ -13,7 +13,7 @@ let myVideoStream;
 navigator.mediaDevices
   .getUserMedia({
     video: true,
-    audio: false,
+    audio: true,
   })
   .then((stream) => {
     myVideoStream = stream;
@@ -41,7 +41,7 @@ navigator.mediaDevices
 
     socket.on("createMessage", (message) => {
       $(".messages").append(
-        `<li class="message"><b>user</b><br>${message}</li>`
+        `<li class="message"><b>User</b> &nbsp <span>${new Date().getHours()} : ${new Date().getMinutes()}</span><br>${message}</li>`
       );
       scrollToBottom();
     });
