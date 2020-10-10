@@ -136,6 +136,12 @@ video {
 .stop {
   color: #cc3b33;
 }
+@media only screen and (max-width: 450px) {
+  video {
+    height: 180px;
+    width: 250px;
+  }
+}
 @media only screen and (max-width: 991px) {
   .main__chat__window {
     max-height: 200px;
