@@ -41,7 +41,15 @@ navigator.mediaDevices
 
     socket.on("createMessage", (message) => {
       $(".messages").append(
-        `<li class="message"><b>User</b> &nbsp <span>${new Date().getHours()} : ${new Date().getMinutes()}</span><br>${message}</li>`
+        `<li class="message"><b>User</b> &nbsp <span>${
+          new Date().getHours() < 10
+            ? "0" + new Date().getHours()
+            : new Date().getHours()
+        } : ${
+          new Date().getMinutes() < 10
+            ? "0" + new Date().getMinutes()
+            : new Date().getMinutes()
+        }</span><br>${message}</li>`
       );
       scrollToBottom();
     });
@@ -119,3 +127,11 @@ const setStopVideo = () => {
 
   document.querySelector(".main__video__button").innerHTML = html;
 };
+
+let count = 0;
+$(".chatButton").click(function () {
+  count++;
+  $(".main__right").toggle();
+  if (count % 2 === 2) document.querySelector(".main__left").style.flex = 0.8;
+  else document.querySelector(".main__left").style.flex = 1;
+});
