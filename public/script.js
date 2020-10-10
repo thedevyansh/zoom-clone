@@ -6,15 +6,12 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: '443',
+  port: "443",
 });
 
 let myVideoStream;
 navigator.mediaDevices
-  .getUserMedia({
-    video: true,
-    audio: true,
-  })
+  .getUserMedia({ audio: true, video: { facingMode: "user" } })
   .then((stream) => {
     myVideoStream = stream;
     addVideoStream(myVideo, stream);
