@@ -6,7 +6,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "443",
+  port: "8080",
 });
 
 let myVideoStream;
@@ -29,12 +29,21 @@ navigator.mediaDevices
     });
 
     let text = $("input");
-    $("html").keydown((e) => {
-      if (e.which == 13 && text.val().length !== 0) {
+
+    const showMessageOnChatWindow = () => {
+      if (text.val().length !== 0) {
         socket.emit("message", text.val());
         text.val("");
       }
+    };
+
+    $("html").keydown((e) => {
+      if (e.which == 13) {
+        showMessageOnChatWindow();
+      }
     });
+
+    $(".send-message").click(showMessageOnChatWindow);
 
     socket.on("createMessage", (message) => {
       $(".messages").append(
