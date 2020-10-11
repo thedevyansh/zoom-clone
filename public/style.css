@@ -77,7 +77,6 @@ video {
   display: flex;
   flex-direction: column;
   background-color: #242324;
-  border-left: 1px solid #3d3d42;
 }
 .main__header {
   color: #e5e4e2;
@@ -142,13 +141,13 @@ video {
     width: 250px;
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
   .main__chat__window {
     max-height: 200px;
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .main {
     height: 100vh;
     flex-direction: row;
@@ -158,10 +157,8 @@ video {
   }
   .main__right {
     flex: 0.2;
+    border-left: 1px solid #3d3d42;
   }
-}
-
-@media only screen and (min-width: 768px) {
   .main__controls__button {
     min-width: 80px;
   }
@@ -171,5 +168,10 @@ video {
   .main__controls__button span {
     display: block;
     font-size: 14px;
+  }
+  .leave__meeting {
+    background-color: transparent;
+    color: #eb534b;
+    font-weight: 700;
   }
 }
