@@ -12,10 +12,10 @@ body {
   flex-wrap: wrap;
 }
 video {
-  height: 200px;
-  width: 280px;
+  height: 230px;
+  width: 310px;
   object-fit: cover;
-  margin: 2px;
+  margin: 3px;
 }
 .main {
   /*height: 100vh;*/
@@ -141,8 +141,8 @@ video {
 }
 @media only screen and (max-width: 450px) {
   video {
-    height: 180px;
-    width: 250px;
+    height: 200px;
+    width: 300px;
   }
 }
 @media only screen and (max-width: 767px) {
