@@ -16,6 +16,8 @@ video {
   width: 310px;
   object-fit: cover;
   margin: 3px;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
 }
 .main {
   /*height: 100vh;*/
